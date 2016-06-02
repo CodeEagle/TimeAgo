@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "TimeAgo"
-  s.version          = "0.1.1"
+  s.version          = "0.1.0"
   s.summary          = "Time Ago, allow custom words "
 
 # This description is used to generate tags and improve search results.
@@ -21,12 +21,12 @@ Pod::Spec.new do |s|
 Time Ago in Swift, allow custom words
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/TimeAgo"
+  s.homepage         = "https://github.com/CodeEagle/TimeAgo"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "CodeEagle" => "stasura@hotmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/TimeAgo.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/CodeEagle/TimeAgo.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/_SelfStudio'
 
   s.ios.deployment_target = '8.0'
 
