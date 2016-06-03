@@ -39,7 +39,7 @@ public class TimeAgo: NSObject {
 		}
 	}
 
-	static let manager = TimeAgo()
+	public static let manager = TimeAgo()
 
 	private override init() {
 		super.init()
