@@ -1,16 +1,16 @@
 import Foundation
 
 extension String {
-	public func toDateWith(format: String) -> NSDate {
-		let dateFormatter = NSDateFormatter()
+	public func toDateWith(_ format: String) -> Date {
+		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = format
-		return dateFormatter.dateFromString(self) ?? NSDate()
+		return dateFormatter.date(from: self) ?? Date()
 	}
 }
 
-public class TimeAgo: NSObject {
+open class TimeAgo: NSObject {
 
-	public class Words: NSObject {
+	open class Words: NSObject {
 		var yearsAgo = " year(s) ago"
 		var monthsAgo = " month(s) ago"
 		var weeksAgo = " week(s) ago"
@@ -39,9 +39,9 @@ public class TimeAgo: NSObject {
 		}
 	}
 
-	public static let manager = TimeAgo()
+	open static let manager = TimeAgo()
 
-	private override init() {
+	fileprivate override init() {
 		super.init()
 		let zhhans = Words(yearsAgo: "年前", monthsAgo: "个月前", weeksAgo: "星期前", daysAgo: "天前", hoursAgo: "小时前", anHourAgo: "1小时前", minutesAgo: "分钟前", anMinuteAgo: "1分钟前", secondsAgo: "秒钟前", justNow: "刚刚")
 
@@ -52,8 +52,8 @@ public class TimeAgo: NSObject {
 		configureForCustomWords["en_US"] = en
 	}
 
-	public var configureForCustomWords: [String: Words] = [:]
-	public var currentLanguage: String = "en_US"
+	open var configureForCustomWords: [String: Words] = [:]
+	open var currentLanguage: String = "en_US"
 
 	var config: Words {
 		if let v = configureForCustomWords[currentLanguage] {
@@ -62,7 +62,7 @@ public class TimeAgo: NSObject {
 		return Words()
 	}
 }
-extension NSDate {
+extension Date {
 	/*
 	 let date = NSDate()
 	 let after = date.dateByAddingTimeInterval(10)
@@ -70,45 +70,45 @@ extension NSDate {
 	 let a = date.compare(after) == .OrderedAscending //true
 	 let b = date.compare(before) == .OrderedDescending //true
 	 */
-	public func isEarlierThan(date: NSDate) -> Bool {
-		return compare(date) == .OrderedAscending
+	public func isEarlierThan(_ date: Date) -> Bool {
+		return compare(date) == .orderedAscending
 	}
 
-	public func isEarlierThanOrEqualTo(date: NSDate) -> Bool {
+	public func isEarlierThanOrEqualTo(_ date: Date) -> Bool {
 		let result = compare(date)
-		return result == .OrderedAscending || result == .OrderedSame
+		return result == .orderedAscending || result == .orderedSame
 	}
 
-	public func formattedDateWith(format: String) -> String {
-		let dateFormatter = NSDateFormatter()
+	public func formattedDateWith(_ format: String) -> String {
+		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = format
-		return dateFormatter.stringFromDate(self)
+		return dateFormatter.string(from: self)
 	}
 
 	public func dayBetweenNow() -> String {
-		let endDate = NSDate()
-		let cal = NSCalendar.currentCalendar()
-		let components = cal.components(.Day, fromDate: self, toDate: endDate, options: .MatchFirst)
+		let endDate = Date()
+		let cal = Calendar.current
+		let components = (cal as NSCalendar).components(.day, from: self, to: endDate, options: .matchFirst)
 		return "\(components.day)"
 	}
 
 	public func timeAgoSinceNow() -> String {
-		let calendar = NSCalendar.currentCalendar()
-		let now = NSDate()
-		let unitFlags: NSCalendarUnit = [.Second, .Minute, .Hour, .Day, .WeekOfYear, .Month, .Year]
-		let components = calendar.components(unitFlags, fromDate: self, toDate: now, options: [])
+		let calendar = Calendar.current
+		let now = Date()
+		let unitFlags: NSCalendar.Unit = [.second, .minute, .hour, .day, .weekOfYear, .month, .year]
+		let components = (calendar as NSCalendar).components(unitFlags, from: self, to: now, options: [])
 
 		let config = TimeAgo.manager.config
 
-		if components.year >= 1 { return "\(components.year)" + config.yearsAgo }
-		if components.month >= 1 { return "\(components.month)" + config.monthsAgo }
-		if components.weekOfYear >= 1 { return "\(components.weekOfYear)" + config.weeksAgo }
-		if components.day >= 1 { return "\(components.day)" + config.daysAgo }
-		if components.hour >= 2 { return "\(components.hour)" + config.hoursAgo }
-		if components.hour >= 1 { return config.anHourAgo }
-		if components.minute >= 2 { return "\(components.minute)" + config.minutesAgo }
-		if components.minute >= 1 { return config.anMinuteAgo }
-		if components.second >= 3 { return "\(components.second)" + config.secondsAgo }
+		if components.year! >= 1 { return "\(components.year)" + config.yearsAgo }
+		if components.month! >= 1 { return "\(components.month)" + config.monthsAgo }
+		if components.weekOfYear! >= 1 { return "\(components.weekOfYear)" + config.weeksAgo }
+		if components.day! >= 1 { return "\(components.day)" + config.daysAgo }
+		if components.hour! >= 2 { return "\(components.hour)" + config.hoursAgo }
+		if components.hour! >= 1 { return config.anHourAgo }
+		if components.minute! >= 2 { return "\(components.minute)" + config.minutesAgo }
+		if components.minute! >= 1 { return config.anMinuteAgo }
+		if components.second! >= 3 { return "\(components.second)" + config.secondsAgo }
 		return config.justNow
 	}
 }
