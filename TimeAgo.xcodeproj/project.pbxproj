@@ -98,6 +98,7 @@
 				TargetAttributes = {
 					166F12F01D0038A500778775 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = L5W9FHSX92;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -236,7 +237,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = L5W9FHSX92;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -257,6 +260,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = L5W9FHSX92;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
