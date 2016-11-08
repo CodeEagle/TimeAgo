@@ -100,15 +100,15 @@ extension Date {
 
 		let config = TimeAgo.manager.config
 
-		if components.year! >= 1 { return "\(components.year)" + config.yearsAgo }
-		if components.month! >= 1 { return "\(components.month)" + config.monthsAgo }
-		if components.weekOfYear! >= 1 { return "\(components.weekOfYear)" + config.weeksAgo }
-		if components.day! >= 1 { return "\(components.day)" + config.daysAgo }
-		if components.hour! >= 2 { return "\(components.hour)" + config.hoursAgo }
-		if components.hour! >= 1 { return config.anHourAgo }
-		if components.minute! >= 2 { return "\(components.minute)" + config.minutesAgo }
-		if components.minute! >= 1 { return config.anMinuteAgo }
-		if components.second! >= 3 { return "\(components.second)" + config.secondsAgo }
+		if let y = components.year, y >= 1 { return "\(y)" + config.yearsAgo }
+		if let m = components.month, m >= 1 { return "\(m)" + config.monthsAgo }
+		if let w = components.weekOfYear, w >= 1 { return "\(w)" + config.weeksAgo }
+		if let d = components.day, d >= 1 { return "\(d)" + config.daysAgo }
+		if let h = components.hour, h >= 2 { return "\(h)" + config.hoursAgo }
+		if let h = components.hour, h >= 1 { return config.anHourAgo }
+		if let m = components.minute, m >= 2 { return "\(m)" + config.minutesAgo }
+		if let m = components.minute, m >= 1 { return config.anMinuteAgo }
+		if let s = components.second, s >= 3 { return "\(s)" + config.secondsAgo }
 		return config.justNow
 	}
 }
