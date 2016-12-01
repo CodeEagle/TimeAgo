@@ -12,13 +12,13 @@ open class TimeAgo: NSObject {
 
 	open class Words: NSObject {
         var yearAgo = " year ago"
-		var yearsAgo = " year(s) ago"
+		var yearsAgo = " years ago"
         var monthAgo = " month ago"
-		var monthsAgo = " month(s) ago"
+		var monthsAgo = " months ago"
         var weekAgo = " week ago"
-		var weeksAgo = " week(s) ago"
+		var weeksAgo = " weeks ago"
         var dayAgo = " day ago"
-		var daysAgo = " day(s) ago"
+		var daysAgo = " days ago"
 		var hoursAgo = " hours ago"
 		var anHourAgo = "An hour ago"
 		var minutesAgo = " minutes ago"
@@ -108,12 +108,12 @@ extension Date {
 
 		let config = TimeAgo.manager.config
 
-        if let y = components.year { return  "\(y)" + (y > 1 ? config.yearsAgo : config.yearAgo) }
-        if let m = components.month { return "\(m)" + (m > 1 ? config.monthsAgo : config.monthAgo) }
-		if let w = components.weekOfYear { return "\(w)" + (w > 1 ? config.weeksAgo : config.weekAgo) }
-		if let d = components.day { return "\(d)" + (d > 1 ? config.daysAgo : config.dayAgo) }
-        if let h = components.hour { return h > 1 ? ("\(h)" + config.hoursAgo) : config.anHourAgo }
-		if let m = components.minute{ return m > 1 ? ("\(m)" + config.minutesAgo) : config.anMinuteAgo }
+        if let y = components.year, y > 0 { return  "\(y)" + (y > 1 ? config.yearsAgo : config.yearAgo) }
+        if let m = components.month, m > 0 { return "\(m)" + (m > 1 ? config.monthsAgo : config.monthAgo) }
+		if let w = components.weekOfYear, w > 0 { return "\(w)" + (w > 1 ? config.weeksAgo : config.weekAgo) }
+		if let d = components.day, d > 0 { return "\(d)" + (d > 1 ? config.daysAgo : config.dayAgo) }
+        if let h = components.hour, h > 0 { return h > 1 ? ("\(h)" + config.hoursAgo) : config.anHourAgo }
+		if let m = components.minute, m > 0 { return m > 1 ? ("\(m)" + config.minutesAgo) : config.anMinuteAgo }
 		if let s = components.second, s >= 3 { return "\(s)" + config.secondsAgo }
 		return config.justNow
 	}

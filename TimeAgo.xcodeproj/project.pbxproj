@@ -7,11 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165F031A1DEFFF0D0014D0F1 /* TimeAgoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165F03191DEFFF0D0014D0F1 /* TimeAgoTests.swift */; };
+		165F031C1DEFFF0D0014D0F1 /* TimeAgo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166F12F11D0038A500778775 /* TimeAgo.framework */; };
 		166F12F51D0038A500778775 /* TimeAgo.h in Headers */ = {isa = PBXBuildFile; fileRef = 166F12F41D0038A500778775 /* TimeAgo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		166F12FD1D00391600778775 /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166F12FC1D00391600778775 /* TimeAgo.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		165F031D1DEFFF0D0014D0F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 166F12E81D0038A500778775 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 166F12F01D0038A500778775;
+			remoteInfo = TimeAgo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		165F03171DEFFF0D0014D0F1 /* TimeAgoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeAgoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		165F03191DEFFF0D0014D0F1 /* TimeAgoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAgoTests.swift; sourceTree = "<group>"; };
+		165F031B1DEFFF0D0014D0F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		166F12F11D0038A500778775 /* TimeAgo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimeAgo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		166F12F41D0038A500778775 /* TimeAgo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeAgo.h; sourceTree = "<group>"; };
 		166F12F61D0038A500778775 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -19,6 +34,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		165F03141DEFFF0D0014D0F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				165F031C1DEFFF0D0014D0F1 /* TimeAgo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		166F12ED1D0038A500778775 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -29,10 +52,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		165F03181DEFFF0D0014D0F1 /* TimeAgoTests */ = {
+			isa = PBXGroup;
+			children = (
+				165F03191DEFFF0D0014D0F1 /* TimeAgoTests.swift */,
+				165F031B1DEFFF0D0014D0F1 /* Info.plist */,
+			);
+			path = TimeAgoTests;
+			sourceTree = "<group>";
+		};
 		166F12E71D0038A500778775 = {
 			isa = PBXGroup;
 			children = (
 				166F12F31D0038A500778775 /* TimeAgo */,
+				165F03181DEFFF0D0014D0F1 /* TimeAgoTests */,
 				166F12F21D0038A500778775 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				166F12F11D0038A500778775 /* TimeAgo.framework */,
+				165F03171DEFFF0D0014D0F1 /* TimeAgoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +103,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		165F03161DEFFF0D0014D0F1 /* TimeAgoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 165F03211DEFFF0D0014D0F1 /* Build configuration list for PBXNativeTarget "TimeAgoTests" */;
+			buildPhases = (
+				165F03131DEFFF0D0014D0F1 /* Sources */,
+				165F03141DEFFF0D0014D0F1 /* Frameworks */,
+				165F03151DEFFF0D0014D0F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				165F031E1DEFFF0D0014D0F1 /* PBXTargetDependency */,
+			);
+			name = TimeAgoTests;
+			productName = TimeAgoTests;
+			productReference = 165F03171DEFFF0D0014D0F1 /* TimeAgoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		166F12F01D0038A500778775 /* TimeAgo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 166F12F91D0038A500778775 /* Build configuration list for PBXNativeTarget "TimeAgo" */;
@@ -93,9 +145,15 @@
 		166F12E81D0038A500778775 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = SelfStudio;
 				TargetAttributes = {
+					165F03161DEFFF0D0014D0F1 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = L5W9FHSX92;
+						ProvisioningStyle = Automatic;
+					};
 					166F12F01D0038A500778775 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = L5W9FHSX92;
@@ -116,11 +174,19 @@
 			projectRoot = "";
 			targets = (
 				166F12F01D0038A500778775 /* TimeAgo */,
+				165F03161DEFFF0D0014D0F1 /* TimeAgoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		165F03151DEFFF0D0014D0F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		166F12EF1D0038A500778775 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -131,6 +197,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		165F03131DEFFF0D0014D0F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				165F031A1DEFFF0D0014D0F1 /* TimeAgoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		166F12EC1D0038A500778775 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -141,7 +215,49 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		165F031E1DEFFF0D0014D0F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 166F12F01D0038A500778775 /* TimeAgo */;
+			targetProxy = 165F031D1DEFFF0D0014D0F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		165F031F1DEFFF0D0014D0F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = L5W9FHSX92;
+				INFOPLIST_FILE = TimeAgoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SelfStudio.TimeAgoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		165F03201DEFFF0D0014D0F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = L5W9FHSX92;
+				INFOPLIST_FILE = TimeAgoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SelfStudio.TimeAgoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		166F12F71D0038A500778775 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -278,6 +394,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		165F03211DEFFF0D0014D0F1 /* Build configuration list for PBXNativeTarget "TimeAgoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				165F031F1DEFFF0D0014D0F1 /* Debug */,
+				165F03201DEFFF0D0014D0F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		166F12EB1D0038A500778775 /* Build configuration list for PBXProject "TimeAgo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
