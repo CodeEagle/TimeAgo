@@ -124,9 +124,9 @@ extension Date {
             } else if d >= 3 && d <= 5 {
                 return "\(d)" + config.daysAgo
             } else if d >= 2 && d < 3 {
-                return config.yesterday
-            } else if d >= 1 && d < 2 {
                 return config.theDayBeforeYesterday
+            } else if d >= 1 && d < 2 {
+                return config.yesterday
             }
         }
         
