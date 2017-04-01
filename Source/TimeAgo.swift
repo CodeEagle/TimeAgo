@@ -65,7 +65,7 @@ open class TimeAgo: NSObject {
 	}
 
 	open var configureForCustomWords: [String: Words] = [:]
-	open var currentLanguage: String = "en_US"
+	open var currentLanguage: String = "zh-Hans"
 
 	var config: Words {
 		if let v = configureForCustomWords[currentLanguage] {
