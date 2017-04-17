@@ -101,7 +101,7 @@ extension Date {
 		let endDate = Date()
 		let cal = Calendar.current
 		let components = (cal as NSCalendar).components(.day, from: self, to: endDate, options: .matchFirst)
-		return "\(components.day)"
+		return "\(components.day ?? 0)"
 	}
 
     public func timeAgoSinceNow() -> String {
