@@ -53,6 +53,8 @@ open class TimeAgo: NSObject {
 
 	open static let manager = TimeAgo()
 
+    static let dateFormatter = DateFormatter()
+    
 	fileprivate override init() {
 		super.init()
 		let zhhans = Words(yearsAgo: "年前", yearAgo: "年前", monthsAgo: "个月前", monthAgo: "个月前", weeksAgo: "星期前", weekAgo: "星期前", daysAgo: "天前", dayAgo: "天前", hoursAgo: "小时前", anHourAgo: "1小时前", minutesAgo: "分钟前", anMinuteAgo: "1分钟前", secondsAgo: "秒钟前", justNow: "刚刚", yesterday: "昨天", theDayBeforeYesterday: "前天")
@@ -92,9 +94,8 @@ extension Date {
 	}
 
 	public func formattedDateWith(_ format: String) -> String {
-		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = format
-		return dateFormatter.string(from: self)
+		TimeAgo.dateFormatter.dateFormat = format
+		return TimeAgo.dateFormatter.string(from: self)
 	}
 
 	public func dayBetweenNow() -> String {
@@ -117,7 +118,9 @@ extension Date {
         if ((currentCom.year ?? 0) - (dateCom.year ?? 0)) >= 1 {
             return self.formattedDateWith("yyyy-MM-dd")
         }
-        
+        if components.month != nil {
+            return self.formattedDateWith("MM-dd")
+        }
         if let d = components.day, d > 0 {
             if d > 5 {
                 return self.formattedDateWith("MM-dd")

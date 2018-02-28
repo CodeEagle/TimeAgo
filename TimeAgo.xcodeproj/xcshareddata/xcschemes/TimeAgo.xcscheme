@@ -29,6 +29,16 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "165F03161DEFFF0D0014D0F1"
+               BuildableName = "TimeAgoTests.xctest"
+               BlueprintName = "TimeAgoTests"
+               ReferencedContainer = "container:TimeAgo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <AdditionalOptions>
       </AdditionalOptions>
