@@ -118,7 +118,7 @@ extension Date {
         if ((currentCom.year ?? 0) - (dateCom.year ?? 0)) >= 1 {
             return self.formattedDateWith("yyyy-MM-dd")
         }
-        if components.month != nil {
+        if let month = components.month, month > 0 {
             return self.formattedDateWith("MM-dd")
         }
         if let d = components.day, d > 0 {

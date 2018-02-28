@@ -23,6 +23,10 @@ class TimeAgoTests: XCTestCase {
     func testExample() {
         let date = Date(timeIntervalSince1970: 1517392896)
         print(date.timeAgoSinceNow())
+        
+        let date2 = Date(timeIntervalSince1970: 1519812743)
+        print(date2.timeAgoSinceNow())
+        
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
