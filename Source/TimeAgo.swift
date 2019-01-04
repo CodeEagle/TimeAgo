@@ -51,7 +51,7 @@ open class TimeAgo: NSObject {
 		}
 	}
 
-	open static let manager = TimeAgo()
+    public static let manager = TimeAgo()
 
     static let dateFormatter = DateFormatter()
     
